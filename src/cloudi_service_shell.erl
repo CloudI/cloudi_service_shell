@@ -143,8 +143,9 @@ log_output(Status, Output, Request) ->
     end,
     if
         Output == [] ->
-            ?LOG(Level, "~s = ~w", [Request, Status]);
+            ?LOG(Level, "~s = ~w",
+                 [Request, Status]);
         true ->
-            ?LOG(Level, "~s = ~w~n~s",
+            ?LOG(Level, "~s = ~w (stdout/stderr below)~n~s",
                  [Request, Status, erlang:iolist_to_binary(Output)])
     end.
