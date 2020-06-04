@@ -12,9 +12,9 @@
 <h1>Module cloudi_service_shell</h1>
 <ul class="index"><li><a href="#description">Description</a></li><li><a href="#types">Data Types</a></li><li><a href="#index">Function Index</a></li><li><a href="#functions">Function Details</a></li></ul>
    <h3><a name="CloudI_Shell_Service">CloudI Shell Service</a></h3>.
-<p>Copyright © 2019 Michael Truog</p>
+<p>Copyright © 2019-2020 Michael Truog</p>
 
-<p><b>Version:</b> 1.8.0 Nov 28 2019 16:21:13
+<p><b>Version:</b> 1.8.1 Jun 3 2020 22:08:00
   ------------------------------------------------------------------------</p>
 <p><b>Behaviours:</b> <a href="deps/cloudi_core/doc/cloudi_service.html"><tt>cloudi_service</tt></a>.</p>
 <p><b>Authors:</b> Michael Truog (<a href="mailto:mjtruog at protonmail dot com"><tt>mjtruog at protonmail dot com</tt></a>).</p>
@@ -29,7 +29,7 @@
 
 
 <h3 class="typedecl"><a name="type-module_response">module_response()</a></h3>
-<p><tt>module_response(Result) = {{ok, Result}, NewAgent::<a href="#type-agent">agent()</a>} | {{error, <a href="deps/cloudi_core/doc/cloudi.html#type-error_reason_sync">cloudi:error_reason_sync()</a>}, NewAgent::<a href="#type-agent">agent()</a>}</tt></p>
+<p><tt>module_response(Result) = {{ok, Result}, AgentNew::<a href="#type-agent">agent()</a>} | {{error, <a href="deps/cloudi_core/doc/cloudi.html#type-error_reason">cloudi:error_reason()</a>}, AgentNew::<a href="#type-agent">agent()</a>}</tt></p>
 
 
 <h3 class="typedecl"><a name="type-service_name">service_name()</a></h3>
