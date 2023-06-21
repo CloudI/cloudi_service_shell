@@ -11,17 +11,31 @@
 
 <h1>Module cloudi_service_shell</h1>
 <ul class="index"><li><a href="#description">Description</a></li><li><a href="#types">Data Types</a></li><li><a href="#index">Function Index</a></li><li><a href="#functions">Function Details</a></li></ul>
-   <h3><a name="CloudI_Shell_Service">CloudI Shell Service</a></h3>.
-<p>Copyright © 2019-2022 Michael Truog</p>
+   <h3><a name="CloudI_Shell_Service">CloudI Shell Service</a></h3><p>   
+For ensuring each shell command-line is executed correctly,   
+it is best to keep the interactive argument set to false (the default)   
+so each service request uses its own shell.</p>
+  
+   Use the interactive argument if you need to utilize a programming
+   language interpreter.
+<p>Copyright © 2019-2023 Michael Truog</p>
 
-<p><b>Version:</b> 2.0.5 Oct 12 2022 00:59:33
+<p><b>Version:</b> 2.0.6 Jun 20 2023 22:32:03
   ------------------------------------------------------------------------</p>
 <p><b>Behaviours:</b> <a href="deps/cloudi_core/doc/cloudi_service.html"><tt>cloudi_service</tt></a>.</p>
 <p><b>Authors:</b> Michael Truog (<a href="mailto:mjtruog at protonmail dot com"><tt>mjtruog at protonmail dot com</tt></a>).</p>
 
 <h2><a name="description">Description</a></h2>
-   <h3><a name="CloudI_Shell_Service">CloudI Shell Service</a></h3>
-
+   <h3><a name="CloudI_Shell_Service">CloudI Shell Service</a></h3><p>   
+For ensuring each shell command-line is executed correctly,   
+it is best to keep the interactive argument set to false (the default)   
+so each service request uses its own shell.</p>
+  
+   Use the interactive argument if you need to utilize a programming
+   language interpreter.  For example, SBCL could be used with
+   <code>exec /usr/bin/sbcl --noinform --disable-debugger --eval '(setf sb-int:*repl-prompt-fun* (lambda (stream) (format stream \"~&amp;\")))'</code>
+   and Python could be used with
+   <code>exec /usr/bin/python3 -ui -c 'import sys; sys.ps1 = sys.ps2 = \"\"</code>'.
 <h2><a name="types">Data Types</a></h2>
 
 <h3 class="typedecl"><a name="type-agent">agent()</a></h3>
@@ -41,7 +55,8 @@
 
 
 <h2><a name="index">Function Index</a></h2>
-<table width="100%" border="1" cellspacing="0" cellpadding="2" summary="function index"><tr><td valign="top"><a href="#cloudi_service_handle_request-11">cloudi_service_handle_request/11</a></td><td></td></tr>
+<table width="100%" border="1" cellspacing="0" cellpadding="2" summary="function index"><tr><td valign="top"><a href="#cloudi_service_handle_info-3">cloudi_service_handle_info/3</a></td><td></td></tr>
+<tr><td valign="top"><a href="#cloudi_service_handle_request-11">cloudi_service_handle_request/11</a></td><td></td></tr>
 <tr><td valign="top"><a href="#cloudi_service_init-4">cloudi_service_init/4</a></td><td></td></tr>
 <tr><td valign="top"><a href="#cloudi_service_terminate-3">cloudi_service_terminate/3</a></td><td></td></tr>
 <tr><td valign="top"><a href="#exec-3">exec/3</a></td><td></td></tr>
@@ -50,6 +65,12 @@
 </table>
 
 <h2><a name="functions">Function Details</a></h2>
+
+<h3 class="function"><a name="cloudi_service_handle_info-3">cloudi_service_handle_info/3</a></h3>
+<div class="spec">
+<p><tt>cloudi_service_handle_info(X1, State, Dispatcher) -&gt; any()</tt></p>
+<p> </p>
+</div>
 
 <h3 class="function"><a name="cloudi_service_handle_request-11">cloudi_service_handle_request/11</a></h3>
 <div class="spec">
